@@ -1,7 +1,9 @@
 from flask import Flask, jsonify
+from config import Config
 from datetime import datetime
 
 app = Flask(__name__)
+app.config.from_object(Config)
 
 @app.route('/', methods=['GET'])
 def get_info():
